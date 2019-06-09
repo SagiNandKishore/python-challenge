@@ -27,8 +27,8 @@ with open(csvfile, mode="r") as csv_fp:
     
     averageChange = '${:,.2f}'.format(sum(change)/len(change))      #Format the totalAmount variable to be recognized as currency
     
-    maxAmountIncrease='${:,.2f}'.format(max(change))                #max of data in change array is the max amount increase
-    maxAmountPeriod = timeperiod[change.index(max(change)) + 1]     #The first element in change array corresponds to second timeperiod. Since it is not mentioned that the start of the budget_data.csv corresponds to the start of the company, we cannot assume that the first record in budget_data.csv corresponds to a change equal to first record in budget_data.csv. So to get the actual time period, lookup the index of maximum change and the time period would the index + 1 element in the "timeperiod" list.
+    maxAmountIncrease='${:,.2f}'.format(max(change))                #max of data in change list is the max amount increase
+    maxAmountPeriod = timeperiod[change.index(max(change)) + 1]     #The first element in change list corresponds to second timeperiod. Since it is not mentioned that the start of the budget_data.csv corresponds to the start of the company, we cannot assume that the first record in budget_data.csv corresponds to a change equal to first record in budget_data.csv. So to get the actual time period, lookup the index of maximum change and the time period would the index + 1 element in the "timeperiod" list.
 
     minAmountDecrease='${:,.2f}'.format(min(change))
     minAmountPeriod = timeperiod[change.index(min(change)) + 1]
