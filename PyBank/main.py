@@ -33,7 +33,7 @@ with open(csvfile, mode="r") as csv_fp:
     minAmountDecrease='${:,.2f}'.format(min(change))
     minAmountPeriod = timeperiod[change.index(min(change)) + 1]
 
-output_file = os.path.join("Resources", "budget_data_output.txt")
+output_file = os.path.join("Output", "budget_data_output.txt")
 
 with open(output_file,"w") as outfile:
     print_output("Financial Analysis", outfile)
